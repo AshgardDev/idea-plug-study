@@ -27,4 +27,9 @@
     <extensions defaultExtensionNs="com.intellij">
 
     </extensions>
+    <actions>
+        <action id="Show" class="org.example.ideaplugstudy.ShowAction" text="ShowAction" description="ShowAction">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+    </actions>
 </idea-plugin>

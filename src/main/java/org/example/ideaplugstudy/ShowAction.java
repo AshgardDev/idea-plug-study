@@ -2,6 +2,7 @@ package org.example.ideaplugstudy;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.ui.Messages;
 
 /**
  * @Description:
@@ -15,5 +16,6 @@ public class ShowAction extends AnAction {
     public void actionPerformed(AnActionEvent e) {
         // TODO: insert action logic here
         System.out.println("e = " + e);
+        Messages.showInfoMessage("hello world", "idea plugin show test");
     }
 }

@@ -1,7 +1,8 @@
 plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "1.9.25"
-    id("org.jetbrains.intellij") version "1.17.4"
+    // 新增 intellij-platform 2.2.0
+    id("org.jetbrains.intellij.platform") version "2.2.0"
 }
 
 group = "org.example"
@@ -9,15 +10,19 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    // 平台依赖
+    intellijPlatform {
+        defaultRepositories()
+    }
 }
 
-// Configure Gradle IntelliJ Plugin
-// Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
-intellij {
-    version.set("2023.2.8")
-    type.set("IC") // Target IDE Platform
-
-    plugins.set(listOf(/* Plugin Dependencies */))
+dependencies {
+    // 平台依赖
+    intellijPlatform {
+        create(providers.gradleProperty("platformType"), providers.gradleProperty("platformVersion"))
+        // 这里如果你用的是破解版的idea 这里用不了local，因为项目运行时要让你激活
+        // local("/Applications/IntelliJ IDEA.app")
+    }
 }
 
 tasks {
