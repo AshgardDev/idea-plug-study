@@ -46,3 +46,4 @@ platformVersion = 2023.3.8
 就可以运行![show.png](show.png)
 剩下的就是开发业务需求，没其他特别的，找几个项目看下就OK啦# idea-plug-study
 # idea-plug-study
+# idea-plug-study
